@@ -1,2 +1,6 @@
-const hello = () => console.log("Hello");
-hello();
+
+const returnHello = () => {
+    console.log("Hello Github");
+} 
+
+returnHello();
