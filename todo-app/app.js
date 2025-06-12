@@ -7,11 +7,14 @@ const path = require("path");
 
 app.set("view engine","ejs");
 app.get("/",async(request,response)=>{
-  const allTodos = await Todo.getTodos();
+  const overdue = await Todo.getOverdue();
+  const dueToday = await Todo.getDueToday();
+  const dueLater = await Todo.getDueLater();
+
   if(request.accepts("html")){
-    response.render("index", {allTodos})
+    response.render("index", {overdue,dueToday,dueLater})
   }
-  else{response.json({allTodos})}
+  else{response.json({overdue, dueToday, dueLater})}
 })
 app.use(express.static(path.join(__dirname, "public"))); 
 

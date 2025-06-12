@@ -1,16 +1,62 @@
 <!--To display the todos-->
-<% for(var i =0; i< allTodos.length ; i++){%>
+<div>
+    <h5>Overdue <span id ="count-overdue" ><%= overdue.length %></span></h5>
+<table>
+<% for(var i =0; i< overdue.length ; i++){%>
             <tr>
                 <td>
                     <%= 
-                    allTodos[i].completed ? '[x]':'[ ]'
+                    overdue[i].completed ? '[x]':'[ ]'
                     %>
                 </td>
                 <td>
-                    <%= allTodos[i].title %>
+                    <%= overdue[i].title %>
                 </td>
                 <td>
-                    <%= allTodos[i].dueDate %>
+                    <%= overdue[i].dueDate %>
                 </td>
             </tr>
         <% } %>
+</table>
+    
+</div>
+<div>
+    <h5>Due Today <span id ="count-due-today" ><%= dueToday.length %></span></h5>
+<table>
+<% for(var i =0; i< dueToday.length ; i++){%>
+            <tr>
+                <td>
+                    <%= 
+                    dueToday[i].completed ? '[x]':'[ ]'
+                    %>
+                </td>
+                <td>
+                    <%= dueToday[i].title %>
+                </td>
+                <td>
+                    <%= dueToday[i].dueDate %>
+                </td>
+            </tr>
+        <% } %>
+</table>
+</div>
+<div>
+    <h5>Due Later <span id="count-due-later"> <%= dueLater.length %></span></h5>
+<table>
+<% for(var i =0; i< dueLater.length ; i++){%>
+            <tr>
+                <td>
+                    <%= 
+                    dueLater[i].completed ? '[x]':'[ ]'
+                    %>
+                </td>
+                <td>
+                    <%= dueLater[i].title %>
+                </td>
+                <td>
+                    <%= dueLater[i].dueDate %>
+                </td>
+            </tr>
+        <% } %>
+</table>
+</div>
