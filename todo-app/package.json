@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start":"nodemon -e js,ejs",
+    "start:prod":"node index.js",
     "pretest": "NODE_ENV=test npx sequelize-cli db:drop && NODE_ENV=test npx sequelize-cli db:create",
     "test": "NODE_ENV=test jest --detectOpenHandles",
     "prepare": "husky"
@@ -11,10 +13,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^5.1.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.0",
     "mysql2": "^3.14.1",
+    "nodemon": "^3.1.10",
     "pg": "^8.16.0",
     "prettier": "^3.5.3",
     "sequelize": "^6.37.7"
